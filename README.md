@@ -2,13 +2,13 @@
 When we want to increase the user experience on our website it’s better to not let the user wait long time for a big process that happen in the back-end and let him free to surf our website having a great experience.
 For doing that we need to add the job tasks that require long process to a queue list of processes that will be executed in a second time.
 
-![queue list](http://25.io/mou/Mou_128.png)
+![queue list](https://raw.githubusercontent.com/geberele/php-queue-system/master/images/queue_list.png)
 
 We can decide when is the best time to execute the job tasks for the items in the queue list, it's up to us, for example it could be during the night if the tasks require long time and we don't want many people using the website in that time.
 
 The structure of the workflow that represent the execution of a queue list looks like:
 
-![flowchart](http://25.io/mou/Mou_128.png)
+![flowchart](https://raw.githubusercontent.com/geberele/php-queue-system/master/images/flowchart.png)
 
 Translating in php code the above flowchart we get something like:
 
@@ -171,4 +171,4 @@ class QueueClass {
 
 This queue class is good for static implementation, for a dynamic implementation it's necessary to store the queue list in a database.
 
-The example could be found [here](github).
+The full example could be found [here](https://github.com/geberele/php-queue-system).
