@@ -1,16 +1,16 @@
 #An example of a Queue System in PHP
-When we want to increase the user experience on our website it’s better to not let the user wait long time for a big process that happen in the back-end and let him free to surf our website having a great experience.
-For doing that we need to add the job tasks that require long process to a queue list of processes that will be executed in a second time.
+Optimise a website for a better user experience is always an important factor. Sometimes the users have to wait for an answer from the server because of big processes that happen in the back end.
+But not all the processes in the back end have to be execute before to let the server reply to the user request. So we can move those kind of processes, expecially if they have job tasks with longer loading time, to a queue list of processes that will be executed in a second time.
 
 ![queue list](https://raw.githubusercontent.com/geberele/php-queue-system/master/images/queue_list.png)
 
 We can decide when is the best time to execute the job tasks for the items in the queue list, it's up to us, for example it could be during the night if the tasks require long time and we don't want many people using the website in that time.
 
-The structure of the workflow that represent the execution of a queue list looks like:
+The structure of the workflow that represents the execution of a queue list looks like:
 
 ![flowchart](https://raw.githubusercontent.com/geberele/php-queue-system/master/images/flowchart.png)
 
-Translating in php code the above flowchart we get something like:
+Translating in PHP code the above flowchart we get something like:
 
 ```
 <?php
@@ -169,6 +169,6 @@ class QueueClass {
 }
 ```
 
-This queue class is good for static implementation, for a dynamic implementation it's necessary to store the queue list in a database.
+This queue class is good for static implementation, for a dynamic implementation is necessary to store the queue list in a database.
 
 The full example could be found [here](https://github.com/geberele/php-queue-system).
