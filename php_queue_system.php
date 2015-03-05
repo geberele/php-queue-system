@@ -37,10 +37,10 @@ function queue_system_example() {
       }
       else {
         $jobs_to_do = FALSE;
-        $time_elapsed_us = microtime(true) - $start;
+        $time_elapsed = microtime(true) - $start;
         $number_of_items = $queue->numberOfItems();
         if ($number_of_items == 0) {
-          echo 'Queue completed in ' . $time_elapsed_us . ' seconds.' . PHP_EOL;
+          echo 'Queue completed in ' . $time_elapsed . ' seconds.' . PHP_EOL;
         }
         else {
           echo 'Queue not completed, there are ' . $number_of_items . ' items left.' . PHP_EOL;
