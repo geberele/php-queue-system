@@ -83,4 +83,19 @@ class QueueClass {
     return FALSE;
   }
 
+  /**
+   * Create a queue.
+   */
+  public function createQueue() {
+    // Nothing needed here.
+  }
+
+  /**
+   * Delete a queue.
+   */
+  public function deleteQueue() {
+    $this->queue = array();
+    $this->id_sequence = 0;
+  }
+
 }

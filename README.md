@@ -1,6 +1,6 @@
 #An example of a Queue System in PHP
 Optimise the performances of a server for a better user experience is always an important factor. Sometimes users have to wait for an answer from the server because of long processes that are happening all at once in the back end.
-But not all of them have to be executed at the same time before the server replies to each request. We can move some of them, expecially the ones that have job tasks with longer loading time, to a queue list of processes that will be executed later on.
+In order to avoid this is important to consider that not all of them have to be executed at the same time before the server replies to each request. Certainly we can postpone some of them, especially the ones that have job tasks with longer loading time, and put them on hold into a processes queue list that will be executed later on.
 
 ![queue list](https://raw.githubusercontent.com/geberele/php-queue-system/master/images/queue_list.png)
 
@@ -166,9 +166,24 @@ class QueueClass {
     return FALSE;
   }
 
+  /**
+   * Create a queue.
+   */
+  public function createQueue() {
+    // Nothing needed here.
+  }
+
+  /**
+   * Delete a queue.
+   */
+  public function deleteQueue() {
+    $this->queue = array();
+    $this->id_sequence = 0;
+  }
+
 }
 ```
 
-This queue class is useful for static implementation, for a dynamic implementation instead is necessary to store the queue list in a database.
+This queue class (that implements the interface [DrupalQueueInterface](https://api.drupal.org/api/drupal/modules%21system%21system.queue.inc/interface/DrupalQueueInterface/7)) is useful for static implementation, for a dynamic implementation instead is necessary to store the queue list in a database.
 
 The full example could be found [here](https://github.com/geberele/php-queue-system).
