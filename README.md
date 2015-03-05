@@ -1,16 +1,16 @@
 #An example of a Queue System in PHP
-Optimise a website for a better user experience is always an important factor. Sometimes the users have to wait for an answer from the server because of big processes that happen in the back end.
-But not all the processes in the back end have to be execute before to let the server reply to the user request. So we can move those kind of processes, expecially if they have job tasks with longer loading time, to a queue list of processes that will be executed in a second time.
+Optimise the performances of a server for a better user experience is always an important factor. Sometimes users have to wait for an answer from the server because of long processes that are happening all at once in the back end.
+But not all of them have to be executed at the same time before the server replies to each request. We can move some of them, expecially the ones that have job tasks with longer loading time, to a queue list of processes that will be executed later on.
 
 ![queue list](https://raw.githubusercontent.com/geberele/php-queue-system/master/images/queue_list.png)
 
-We can decide when is the best time to execute the job tasks for the items in the queue list, it's up to us, for example it could be during the night if the tasks require long time and we don't want many people using the website in that time.
+The Queue List can be executed whenever we think it's better for the web site. For example it could be at night if the tasks require long time and we'd like to affect as less users as possible in case the website performances slow down.
 
-The structure of the workflow that represents the execution of a queue list looks like:
+The structure of a workflow that represents the execution of a queue list looks like the following:
 
 ![flowchart](https://raw.githubusercontent.com/geberele/php-queue-system/master/images/flowchart.png)
 
-Translating in PHP code the above flowchart we get something like:
+Translating in PHP code the above flowchart we'll get something like this:
 
 ```
 <?php
@@ -38,7 +38,7 @@ function queue_system_example() {
 
         // Execute the job task in a different function.
         if (execute_the_job_task($item)) {
-          // Delete the item if the.
+          // Delete the item.
           $queue->deleteItem($item);
           echo 'Item ' . $item->item_id . ' processed.' . PHP_EOL;
         }
@@ -169,6 +169,6 @@ class QueueClass {
 }
 ```
 
-This queue class is good for static implementation, for a dynamic implementation is necessary to store the queue list in a database.
+This queue class is useful for static implementation, for a dynamic implementation instead is necessary to store the queue list in a database.
 
 The full example could be found [here](https://github.com/geberele/php-queue-system).

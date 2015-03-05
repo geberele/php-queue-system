@@ -23,7 +23,7 @@ function queue_system_example() {
 
         // Execute the job task in a different function.
         if (execute_the_job_task($item)) {
-          // Delete the item if the.
+          // Delete the item.
           $queue->deleteItem($item);
           echo 'Item ' . $item->item_id . ' processed.' . PHP_EOL;
         }
